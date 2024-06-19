@@ -1,0 +1,11 @@
+﻿Insulin       B-DRUG
+Glargine      I-DRUG
+for           O
+diabetics     O
+,             O
+clear         O
+diagnosis     O
+of            O
+Diabetic      B-DISEASE
+Retinopathy   B-DISEASE
+

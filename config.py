@@ -1,0 +1,9 @@
+maxlen =150
+epochs = 25
+batch_size = 16
+bert_layers = 6
+crf_lr_multiplier = 1000  # increase the learning rate if possible
+model_type = 'roformer_v2'
+dropout_rate = 0.1
+max_lr = 1e-5
+lstm_hidden_units = 128
