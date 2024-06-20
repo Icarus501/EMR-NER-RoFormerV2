@@ -51,6 +51,45 @@ ATTENTION:
 - End the file with two newline characters.
 
 You can run statistic.py to view information about sentence length and quantity.
+```
+
+## Requirements
+
+```
+Keras==2.2.4
+matplotlib==3.4.0
+pandas==1.2.3
+tensorflow==1.14.0
+tqdm==4.61.2
+```
+
+## Steps
+
+
+1. Replace the dataset.
+2. Modify the addresses in path.py.
+3. Delete the old `weights/{}_catagory.pkl` category set file.
+4. Adjust the model structure in `model.py` as needed.
+5. Update parameters in config.py.
+6. Debug.
+7. Train the model.
+
+## Model
+
+The model integrates RoFormerV2 with BiLSTM-CRF to enhance medical entity recognition and knowledge map relationship analysis in Chinese electronic medical records (EMRs). RoFormerV2, a transformer-based model, enhancing speed through structural simplification and improves effectiveness by combining unsupervised pre-training with supervised pre-training, while BiLSTM-CRF provides sequence labeling capabilities for precise entity extraction. This fusion leverages the strengths of both models, improving the accuracy and efficiency of the task. The overall framework ensures comprehensive processing from input to output, facilitating better understanding and application in clinical contexts.
+
+## Configurations
+
+- **maxlen**: The maximum length of a single sentence in each batch during training. Sentences shorter than this length will be padded, and sentences longer will be truncated.
+- **epochs**: The maximum number of training epochs.
+- **batch_size**: The size of each batch.
+- **bert_layers**: The number of BERT layers. 
+- **crf_lr_multiplier**: The learning rate multiplier for the CRF layer. 
+- **model_type**: The model type, e.g., 'roformer_v2'.
+- **dropout_rate**: The dropout rate.
+- **max_lr**: The maximum learning rate. The higher the number of bert_layers, the lower this should be. For small models, it's recommended to use between 5e-5 to 1e-4, and for base models, between 1e-5 to 5e-5.
+- **lstm_hidden_units**: The number of hidden units in the LSTM.
+
 
 ## Project Structure
 
@@ -84,27 +123,3 @@ You can run statistic.py to view information about sentence length and quantity.
     ├── yidu_catagory.pkl                       Entity categories
     ├── yidu_roformer_v2_base.h5                Model weights
     └── yidu_roformer_v2_crf_trans.pkl          Best model weights
-```
-
-## Requirements
-
-```
-Keras==2.2.4
-matplotlib==3.4.0
-pandas==1.2.3
-tensorflow==1.14.0
-tqdm==4.61.2
-```
-
-## Steps
-
-
-1. Replace the dataset.
-2. Modify the addresses in path.py.
-3. Delete the old `weights/{}_catagory.pkl` category set file.
-4. Adjust the model structure in `model.py` as needed.
-5. Update parameters in config.py.
-6. Debug.
-7. Train the model.
-
-## Model
