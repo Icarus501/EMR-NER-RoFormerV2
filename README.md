@@ -51,17 +51,21 @@ ATTENTION:
 - End the file with two newline characters.
 
 You can run statistic.py to view information about sentence length and quantity.
-```
+
 
 ## Requirements
 
-```
-Keras==2.2.4
-matplotlib==3.4.0
-pandas==1.2.3
-tensorflow==1.14.0
-tqdm==4.61.2
-```
+
+- Keras==2.2.4
+
+- matplotlib==3.4.0
+
+- pandas==1.2.3
+
+- tensorflow==1.14.0
+
+- tqdm==4.61.2
+
 
 ## Steps
 
@@ -123,3 +127,4 @@ The model integrates RoFormerV2 with BiLSTM-CRF to enhance medical entity recogn
     ├── yidu_catagory.pkl                       Entity categories
     ├── yidu_roformer_v2_base.h5                Model weights
     └── yidu_roformer_v2_crf_trans.pkl          Best model weights
+```
